@@ -3,15 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>日本語</title>
+        <title>redirect</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-       
-        <form onsubmit="return redirectToRandomPage()">
-            <label for="phoneInput">電話番号の下4桁を入力してください: </label>
+        
+        <form onsubmit="return redirect()">
+    
+            <label for="phoneInput">電話番号の下4桁を入力してください </label>
+            <p>入力された内容は、アンケートの配信にのみ使用されます。</p>
             <input type="text" id="phoneInput" maxlength="4">
-            <button onclick="redirect()">次へ</button>
+            <button type="submit">次へ</button>
         </form>
         <!--<div class="container">
            <label for="phoneInput">電話番号の下4桁を入力してください</label>

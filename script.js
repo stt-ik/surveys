@@ -9,8 +9,11 @@ function redirect(){
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
 
     });
+    console.log("halfWidthDigits:", halfWidthDigits);
+    console.log("Regex test result:", /^\d{4}$/.test(halfWidthDigits));
+
     if(!/^\d{4}$/.test(halfWidthDigits)){
-        alert("正しく入力ください");
+        alert("数字を正しく入力ください");
         phoneInput.value=""; //clear the form
         return false;
     }
@@ -29,8 +32,8 @@ function redirect(){
         'https://forms.gle/22FNbvLBr372Vsys7'
     ];
     //对输入的四位数进行取余，并使其范围在1~8之间
-    var remainder =(parseInt(halfWidthDigits) % redirectURL.length) + 1;
-    
+    var remainder =(parseInt(halfWidthDigits) % redirectURL.length);
+    console.log("remainder:", remainder);
     //var randomPageNumber = Math.floor(Math.random()*8)+1;
 
     // 构造跳转链接
@@ -38,4 +41,6 @@ function redirect(){
 
     //执行跳转
     window.location.href = redirectURL.length > 0 ? redirectURL[remainder] : 'https://www.google.com';
+
+    return false;
 }
