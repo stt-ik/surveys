@@ -9,6 +9,11 @@ function redirect(){
         return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
 
     });
+    if(!/^\d{4}$/.test(halfWidthDigits)){
+        alert("正しく入力ください");
+        phoneInput.value=""; //clear the form
+        return false;
+    }
     //if (lastFourDigits.length !== 4 || isNaN(lastFourDigits)) {
     //    alert("请输入有效的手机后四位数字。");
     //    return;

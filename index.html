@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,17 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="container">
+        <h1>電話番号の下４桁を入力ください</h1>
+        <form onsubmit="return redirectToRandomPage()">
             <label for="phoneInput">電話番号の下4桁を入力してください</label>
             <input type="text" id="phoneInput" maxlength="4">
             <button onclick="redirect()">次へ</button>
-        </div>
+        </form>
+        <!--<div class="container">
+           <label for="phoneInput">電話番号の下4桁を入力してください</label>
+            <input type="text" id="phoneInput" maxlength="4">
+            <button onclick="redirect()">次へ</button>
+        </div>-->
         <script src="script.js"></script>
     </body>
 </html>
