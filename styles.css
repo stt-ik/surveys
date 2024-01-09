@@ -1,19 +1,23 @@
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Yu Gothic', Arial, sans-serif;
     background-color: #f4f4f4;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+
+
 }
 
-.container {
+form {
     text-align: center;
+
 }
+
 
 input {
-    padding: 5px;
+    padding: 8px;
 }
 
 button{
@@ -22,4 +26,8 @@ button{
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }
