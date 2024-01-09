@@ -5,11 +5,14 @@ function redirect(){
         return;
     }
     var lastFourDigits = phoneInput.value;
+    const halfWidthDigits = lastFourDigits.replace(/[０-９]/g,function(s){
+        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
 
-    if (lastFourDigits.length !== 4 || isNaN(lastFourDigits)) {
-        alert("请输入有效的手机后四位数字。");
-        return;
-    }
+    });
+    //if (lastFourDigits.length !== 4 || isNaN(lastFourDigits)) {
+    //    alert("请输入有效的手机后四位数字。");
+    //    return;
+    //}
     var redirectURL = [
         'https://forms.gle/3vCGYyWFx4oeXFq26', 
         'https://forms.gle/nsUjMY5EptVhoXfZ6',
@@ -21,7 +24,7 @@ function redirect(){
         'https://forms.gle/22FNbvLBr372Vsys7'
     ];
     //对输入的四位数进行取余，并使其范围在1~8之间
-    var remainder =(lastFourDigits % redirectURL.length) + 1;
+    var remainder =(parseInt(halfWidthDigits) % redirectURL.length) + 1;
     
     //var randomPageNumber = Math.floor(Math.random()*8)+1;
 
